@@ -47,8 +47,7 @@ export default function Hero() {
               <span className="animate-blink">|</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-              I build exceptional digital experiences with clean code and modern technologies. Turning complex problems
-              into elegant solutions is what I do best.
+            I craft exceptional digital experiences by combining clean, maintainable code with cutting-edge technologies. I specialize in transforming complex challenges into intuitive, elegant solutions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -63,12 +62,12 @@ export default function Hero() {
 
             <div className="flex gap-4 mt-8">
               <Button variant="ghost" size="icon" className="rounded-full" asChild>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/Otibaco" target="_blank" rel="noopener noreferrer">
                   <Github className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" className="rounded-full" asChild>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/orji-franklin-15467b358/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </Button>
