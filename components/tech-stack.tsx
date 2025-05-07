@@ -53,7 +53,7 @@ export default function TechStack() {
         { name: "Java (Spring Boot)", level: 85 },
         { name: "Kotlin (Spring Boot)", level: 70 },
         { name: "JavaScript (Node.js)", level: 65 },
-        { name: "Express.js (Node.js)", level: 60 },
+        { name: "TypeScript (Node.js)", level: 60 },
       
       ],
     },
@@ -74,7 +74,8 @@ export default function TechStack() {
       skills: [
         { name: "Git", level: 90 },
         { name: "Visual Studio", level: 90 },
-        { name: "Docker", level: 80 },
+        { name: "JUnit 5", level: 80 },
+        { name: "Docker", level: 70 },
         { name: "AWS", level: 75 },
       ],
     },
