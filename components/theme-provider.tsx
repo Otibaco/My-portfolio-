@@ -1,13 +1,12 @@
 "use client"
 
-import type React from "react"
-
 import { createContext, useContext, useEffect, useState } from "react"
+import type { ReactNode } from "react"
 
 type Theme = "dark" | "light"
 
 type ThemeProviderProps = {
-  children: React.ReactNode
+  children: ReactNode
   defaultTheme?: Theme
 }
 
@@ -16,28 +15,40 @@ type ThemeProviderState = {
   setTheme: (theme: Theme) => void
 }
 
-const initialState: ThemeProviderState = {
-  theme: "dark",
-  setTheme: () => null,
-}
-
-const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
+const ThemeProviderContext = createContext<ThemeProviderState | undefined>(undefined)
 
 export function ThemeProvider({ children, defaultTheme = "dark" }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(defaultTheme)
+  const [theme, setThemeState] = useState<Theme>(defaultTheme)
 
+  // Load theme from localStorage on first render
   useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") as Theme | null
+    if (savedTheme) {
+      setThemeState(savedTheme)
+      document.documentElement.classList.add(savedTheme)
+    } else {
+      // fallback to defaultTheme
+      document.documentElement.classList.add(defaultTheme)
+    }
+  }, [defaultTheme])
+
+  // Update html class and localStorage whenever theme changes
+  const setTheme = (newTheme: Theme) => {
+    setThemeState(newTheme)
+    localStorage.setItem("theme", newTheme)
+
     const root = window.document.documentElement
     root.classList.remove("light", "dark")
-    root.classList.add(theme)
-  }, [theme])
-
-  const value = {
-    theme,
-    setTheme: (theme: Theme) => setTheme(theme),
+    root.classList.add(newTheme)
   }
 
-  return <ThemeProviderContext.Provider value={value}>{children}</ThemeProviderContext.Provider>
+  const value = { theme, setTheme }
+
+  return (
+    <ThemeProviderContext.Provider value={value}>
+      {children}
+    </ThemeProviderContext.Provider>
+  )
 }
 
 export const useTheme = () => {

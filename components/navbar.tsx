@@ -1,19 +1,21 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Sun, Moon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { useTheme } from "@/components/theme-provider"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
+  const { theme, setTheme } = useTheme()
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -23,10 +25,7 @@ export default function Navbar() {
     const element = document.getElementById(sectionId)
     if (element) {
       const offsetTop = element.getBoundingClientRect().top + window.pageYOffset
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      })
+      window.scrollTo({ top: offsetTop, behavior: "smooth" })
     }
   }
 
@@ -39,21 +38,28 @@ export default function Navbar() {
     { name: "Contact", href: "contact" },
   ]
 
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark")
+  }
+
   return (
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent",
+        scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"
       )}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <button onClick={() => scrollToSection("home")} className="text-2xl font-bold text-primary">
+          <button
+            onClick={() => scrollToSection("home")}
+            className="text-2xl font-bold text-primary"
+          >
             Memory<span className="text-destructive">Leaked</span>
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <button
                 key={link.name}
@@ -64,10 +70,18 @@ export default function Navbar() {
               </button>
             ))}
             <Button>Resume</Button>
+            <Button variant="ghost" size="icon" onClick={toggleTheme}>
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </Button>
           </nav>
 
           {/* Mobile Navigation Toggle */}
-          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             {isOpen ? <X /> : <Menu />}
           </Button>
         </div>
@@ -88,6 +102,9 @@ export default function Navbar() {
                 </button>
               ))}
               <Button className="w-full">Resume</Button>
+              <Button variant="outline" onClick={toggleTheme}>
+                {theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              </Button>
             </nav>
           </div>
         </div>
