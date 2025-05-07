@@ -104,7 +104,7 @@ export default function Navbar() {
                 </button>
               ))}
               <a href="/Junit5.pdf" download="Junit5.pdf">
-                <Button>Resume</Button>
+                <Button className="w-full">Resume</Button>
               </a>
               <Button variant="outline" onClick={toggleTheme}>
                 {theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}

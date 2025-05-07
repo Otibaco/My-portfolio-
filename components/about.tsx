@@ -37,20 +37,15 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.2 }}
             variants={fadeIn}
           >
-            <h3 className="text-2xl font-bold mb-4">A Passionate Developer</h3>
+            <h3 className="text-2xl font-bold mb-4">Committed to Building with Passion and Precision</h3>
             <p className="text-muted-foreground mb-6">
-              I'm a software developer with a passion for creating clean, efficient, and user-friendly applications.
-              With over 5 years of experience in the industry, I've worked on a variety of projects ranging from small
-              business websites to complex enterprise applications.
+            I’m a software developer who loves building clean, efficient, and user-friendly apps. With over 4 years in the game, I’ve worked on everything from small business sites to big, complex systems—and I still get excited about every new project.
             </p>
             <p className="text-muted-foreground mb-6">
-              My journey in software development began when I was in college, where I discovered my love for solving
-              complex problems through code. Since then, I've been continuously learning and improving my skills to stay
-              at the forefront of technology.
+            My journey into software development started back in college, where I first discovered the thrill of solving complex problems with code. Since then, I’ve been on a continuous path of growth—sharpening my skills and staying ahead in a fast-moving tech world.
             </p>
             <p className="text-muted-foreground">
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or
-              sharing my knowledge through blog posts and community forums.
+            When I’m not immersed in code, I’m likely exploring emerging technologies, contributing to open-source initiatives, or sharing insights through blog posts and tech communities.
             </p>
           </motion.div>
 
@@ -71,8 +66,7 @@ export default function About() {
                     <div>
                       <h4 className="text-xl font-semibold mb-2">Clean Code</h4>
                       <p className="text-muted-foreground">
-                        I write maintainable, scalable, and efficient code following best practices and industry
-                        standards.
+                      I specialize in writing clean, maintainable, and scalable code that adheres to industry standards and best practices.
                       </p>
                     </div>
                   </div>
@@ -96,7 +90,7 @@ export default function About() {
                     <div>
                       <h4 className="text-xl font-semibold mb-2">Problem Solver</h4>
                       <p className="text-muted-foreground">
-                        I enjoy tackling complex challenges and finding elegant solutions through creative thinking.
+                      I thrive on solving complex challenges by crafting elegant, innovative solutions through thoughtful and creative problem-solving.
                       </p>
                     </div>
                   </div>
@@ -120,7 +114,7 @@ export default function About() {
                     <div>
                       <h4 className="text-xl font-semibold mb-2">Fast Learner</h4>
                       <p className="text-muted-foreground">
-                        I quickly adapt to new technologies and environments, constantly expanding my skill set.
+                      I'm quick to learn new tools and tech, always working on growing my skills.
                       </p>
                     </div>
                   </div>
