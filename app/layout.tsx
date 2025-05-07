@@ -61,7 +61,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={inter.className} cz-shortcut-listen="true">
         <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
       </body>
     </html>

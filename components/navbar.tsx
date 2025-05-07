@@ -55,7 +55,7 @@ export default function Navbar() {
             onClick={() => scrollToSection("home")}
             className="text-2xl font-bold text-primary"
           >
-            Memory<span className="text-destructive">Leaked</span>
+            Frank<span className="text-destructive"> Melvin</span>
           </button>
 
           {/* Desktop Navigation */}
@@ -69,7 +69,9 @@ export default function Navbar() {
                 {link.name}
               </button>
             ))}
-            <Button>Resume</Button>
+            <a href="/Junit5.pdf" download="Junit5.pdf">
+              <Button>Resume</Button>
+            </a>
             <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </Button>
@@ -101,7 +103,9 @@ export default function Navbar() {
                   {link.name}
                 </button>
               ))}
-              <Button className="w-full">Resume</Button>
+              <a href="/Junit5.pdf" download="Junit5.pdf">
+                <Button>Resume</Button>
+              </a>
               <Button variant="outline" onClick={toggleTheme}>
                 {theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
               </Button>
