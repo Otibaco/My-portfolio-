@@ -15,13 +15,11 @@ export default function TechStack() {
       title: "Programming Languages",
       description: "Core languages for systems and application development",
       skills: [
-        { name: "C++", level: 90 },
-        { name: "C", level: 85 },
-        { name: "Java", level: 88 },
-        { name: "Ruby", level: 82 },
-        { name: "Python", level: 85 },
-        { name: "TypeScript", level: 90 },
-        { name: "JavaScript", level: 90 },
+        { name: "Java", level: 85 },
+        { name: "Kotlin", level: 70 },
+        { name: "Python", level: 65 },
+        { name: "JavaScript", level: 55 },
+        { name: "TypeScript", level: 50 },
       ],
     },
     concepts: {
@@ -29,12 +27,11 @@ export default function TechStack() {
       title: "Engineering Concepts",
       description: "Fundamental software engineering principles",
       skills: [
-        { name: "Data Structures", level: 95 },
-        { name: "Algorithms", level: 90 },
         { name: "OOP", level: 95 },
-        { name: "Design Patterns", level: 85 },
-        { name: "System Design", level: 80 },
-        { name: "Multithreading", level: 85 },
+        { name: "Design Patterns", level: 80 },
+        { name: "Data Structures", level: 80 },
+        { name: "Algorithms", level: 75 },
+        { name: "Multithreading", level: 75 },
       ],
     },
     frontend: {
@@ -42,12 +39,10 @@ export default function TechStack() {
       title: "Frontend Development",
       description: "Modern web development technologies",
       skills: [
-        { name: "React", level: 90 },
-        { name: "Next.js", level: 85 },
-        { name: "HTML/CSS", level: 95 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "Redux", level: 85 },
-        { name: "WebGL", level: 75 },
+        { name: "HTML/CSS", level: 80 },
+        { name: "Next.js", level: 75 },
+        { name: "React", level: 70 },
+        { name: "Tailwind CSS", level: 65 },
       ],
     },
     backend: {
@@ -55,10 +50,11 @@ export default function TechStack() {
       title: "Backend Development",
       description: "Server-side frameworks and technologies",
       skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Express", level: 80 },
-        { name: "Spring Boot", level: 85 },
-        { name: "Ruby on Rails", level: 80 },
+        { name: "Java (Spring Boot)", level: 85 },
+        { name: "Kotlin (Spring Boot)", level: 70 },
+        { name: "JavaScript (Node.js)", level: 65 },
+        { name: "Express.js (Node.js)", level: 60 },
+      
       ],
     },
     database: {
@@ -66,10 +62,9 @@ export default function TechStack() {
       title: "Database Systems",
       description: "Database management and optimization",
       skills: [
-        { name: "MongoDB", level: 85 },
+        { name: "MySQL", level: 80 },
         { name: "PostgreSQL", level: 80 },
-        { name: "MySQL", level: 75 },
-        { name: "Redis", level: 70 },
+        { name: "MongoDB", level: 55 },
       ],
     },
     tools: {
@@ -78,11 +73,9 @@ export default function TechStack() {
       description: "Tools and environments for development",
       skills: [
         { name: "Git", level: 90 },
+        { name: "Visual Studio", level: 90 },
         { name: "Docker", level: 80 },
         { name: "AWS", level: 75 },
-        { name: "Linux/Unix", level: 85 },
-        { name: "CMake", level: 80 },
-        { name: "Visual Studio", level: 85 },
       ],
     },
   }
@@ -202,8 +195,7 @@ export default function TechStack() {
           className="mt-12 text-center text-muted-foreground"
         >
           <p className="max-w-2xl mx-auto">
-            With extensive experience in both low-level systems programming and modern web development, I bring a
-            comprehensive understanding of software engineering principles to every project.
+            With proficient experience in both low-level systems programming and modern web and mobile app development, I bring a comprehensive understanding of software engineering principles to every project.
           </p>
         </motion.div>
       </div>
