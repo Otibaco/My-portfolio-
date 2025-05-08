@@ -17,6 +17,16 @@ type ThemeProviderState = {
 
 const ThemeProviderContext = createContext<ThemeProviderState | undefined>(undefined)
 
+// Apply the saved theme immediately to prevent flashing
+if (typeof window !== "undefined") {
+  const savedTheme = localStorage.getItem("theme") as Theme | null
+  if (savedTheme) {
+    document.documentElement.classList.add(savedTheme)
+  } else {
+    document.documentElement.classList.add("dark") // Default to dark theme
+  }
+}
+
 export function ThemeProvider({ children, defaultTheme = "dark" }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<Theme>(defaultTheme)
 
@@ -25,10 +35,8 @@ export function ThemeProvider({ children, defaultTheme = "dark" }: ThemeProvider
     const savedTheme = localStorage.getItem("theme") as Theme | null
     if (savedTheme) {
       setThemeState(savedTheme)
-      document.documentElement.classList.add(savedTheme)
     } else {
-      // fallback to defaultTheme
-      document.documentElement.classList.add(defaultTheme)
+      setThemeState(defaultTheme)
     }
   }, [defaultTheme])
 

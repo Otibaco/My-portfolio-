@@ -69,23 +69,28 @@ export default function Navbar() {
                 {link.name}
               </button>
             ))}
-            <a href="/Junit5.pdf" download="Junit5.pdf">
-              <Button>Resume</Button>
-            </a>
+            
             <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </Button>
+            <a href="/Junit5.pdf" download="Junit5.pdf">
+              <Button>Resume</Button>
+            </a>
           </nav>
 
-          {/* Mobile Navigation Toggle */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X /> : <Menu />}
-          </Button>
+          {/* Mobile Navigation Icons */}
+          <div className="flex items-center space-x-4 md:hidden">
+            <Button variant="ghost" size="icon" onClick={toggleTheme}>
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X /> : <Menu />}
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -106,9 +111,6 @@ export default function Navbar() {
               <a href="/Junit5.pdf" download="Junit5.pdf">
                 <Button className="w-full">Resume</Button>
               </a>
-              <Button variant="outline" onClick={toggleTheme}>
-                {theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
-              </Button>
             </nav>
           </div>
         </div>
