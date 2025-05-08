@@ -12,6 +12,13 @@ body {
   }
 }
 
+/* Default to dark mode until the theme is resolved */
+html {
+  color-scheme: dark;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -82,6 +89,17 @@ body {
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+}
+
+/* Default styles for light and dark themes */
+[data-theme="light"] {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+[data-theme="dark"] {
+  --background-color: #000000;
+  --text-color: #ffffff;
 }
 
 @layer base {

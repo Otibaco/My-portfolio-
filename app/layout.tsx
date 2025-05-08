@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     url: "https://yourdomain.com",
     siteName: "Franklin Portfolio",
     type: "website",
-    locale: "en_US"
+    locale: "en_US",
   },
   robots: {
     index: true,
@@ -44,15 +44,23 @@ export const metadata: Metadata = {
       follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
-      "max-video-preview": -1
-    }
+      "max-video-preview": -1,
+    },
   },
   metadataBase: new URL("https://yourdomain.com"),
   alternates: {
-    canonical: "https://yourdomain.com"
-  }
+    canonical: "https://yourdomain.com",
+  },
 }
 
+const setInitialTheme = `
+  (function () {
+    try {
+      const theme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.classList.add(theme);
+    } catch (e) {}
+  })();
+`
 
 export default function RootLayout({
   children,
@@ -61,8 +69,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
+      </head>
       <body className={inter.className} cz-shortcut-listen="true">
-        <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
+        <ThemeProvider defaultTheme="dark">
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

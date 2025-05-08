@@ -17,37 +17,25 @@ type ThemeProviderState = {
 
 const ThemeProviderContext = createContext<ThemeProviderState | undefined>(undefined)
 
-// Apply the saved theme immediately to prevent flashing
-if (typeof window !== "undefined") {
-  const savedTheme = localStorage.getItem("theme") as Theme | null
-  if (savedTheme) {
-    document.documentElement.classList.add(savedTheme)
-  } else {
-    document.documentElement.classList.add("dark") // Default to dark theme
-  }
-}
-
 export function ThemeProvider({ children, defaultTheme = "dark" }: ThemeProviderProps) {
-  const [theme, setThemeState] = useState<Theme>(defaultTheme)
-
-  // Load theme from localStorage on first render
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as Theme | null
-    if (savedTheme) {
-      setThemeState(savedTheme)
-    } else {
-      setThemeState(defaultTheme)
+  const [theme, setThemeState] = useState<Theme>(() => {
+    if (typeof window !== "undefined") {
+      const savedTheme = localStorage.getItem("theme") as Theme | null
+      return savedTheme || defaultTheme
     }
-  }, [defaultTheme])
+    return defaultTheme
+  })
 
-  // Update html class and localStorage whenever theme changes
-  const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme)
-    localStorage.setItem("theme", newTheme)
-
+  // Apply the theme to the <html> tag and save it to localStorage
+  useEffect(() => {
     const root = window.document.documentElement
     root.classList.remove("light", "dark")
-    root.classList.add(newTheme)
+    root.classList.add(theme)
+    localStorage.setItem("theme", theme)
+  }, [theme])
+
+  const setTheme = (newTheme: Theme) => {
+    setThemeState(newTheme)
   }
 
   const value = { theme, setTheme }
