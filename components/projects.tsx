@@ -84,7 +84,7 @@ export default function Projects() {
       image: "/placeholder.svg?height=400&width=600",
       tags: ["C", "LLVM", "Assembly", "Python"],
       features: ["Lexical analysis", "Syntax parsing", "Code optimization", "Error handling", "Assembly generation"],
-      demoLink: "#",
+      demoLink: "https://www.chocolitegroup.com/",
       githubLink: "#",
       fullDescription:
         "This compiler project implements a custom programming language with modern features and optimizations. Built using C and LLVM, it includes comprehensive error handling and code optimization capabilities. The compiler performs lexical analysis, syntax parsing, semantic analysis, and generates optimized assembly code.",

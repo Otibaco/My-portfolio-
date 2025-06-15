@@ -73,7 +73,7 @@ export default function Navbar() {
             <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </Button>
-            <a href="/Junit5.pdf" download="Junit5.pdf">
+            <a href="/Resume.pdf" download="Resume.pdf">
               <Button>Resume</Button>
             </a>
           </nav>
