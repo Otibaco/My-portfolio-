@@ -69,11 +69,11 @@ export default function Navbar() {
                 {link.name}
               </button>
             ))}
-            
+
             <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
             </Button>
-            <a href="/Resume.pdf" download="Resume.pdf">
+            <a href="/orjifranklin_cv.pdf" download="orjifranklin_cv.pdf">
               <Button>Resume</Button>
             </a>
           </nav>
@@ -108,7 +108,7 @@ export default function Navbar() {
                   {link.name}
                 </button>
               ))}
-              <a href="/Junit5.pdf" download="Junit5.pdf">
+              <a href="/orjifranklin_cv.pdf" download="orjifranklin_cv.pdf">
                 <Button className="w-full">Resume</Button>
               </a>
             </nav>
