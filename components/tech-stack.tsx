@@ -4,7 +4,16 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { Code2, Layout, Server, Database, Wrench, Binary } from "lucide-react"
+import {
+  Code2,
+  Layout,
+  Server,
+  Database,
+  Wrench,
+  Binary,
+  Layers,
+  Cloud,
+} from "lucide-react"
 
 export default function TechStack() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
@@ -13,70 +22,100 @@ export default function TechStack() {
     languages: {
       icon: <Code2 className="h-6 w-6" />,
       title: "Programming Languages",
-      description: "Core languages for systems and application development",
+      description: "Primary languages used in production systems",
       skills: [
-        { name: "Java", level: 85 },
-        { name: "Kotlin", level: 70 },
-        { name: "Python", level: 65 },
-        { name: "JavaScript", level: 55 },
-        { name: "TypeScript", level: 50 },
+        { name: "Java", level: 90 },
+        { name: "Kotlin", level: 75 },
+        { name: "TypeScript", level: 75 },
+        { name: "JavaScript", level: 70 },
       ],
     },
+
     concepts: {
       icon: <Binary className="h-6 w-6" />,
-      title: "Engineering Concepts",
-      description: "Fundamental software engineering principles",
+      title: "Core Engineering Concepts",
+      description: "Foundations used to build reliable backend systems",
       skills: [
-        { name: "OOP", level: 95 },
+        { name: "Object-Oriented Design", level: 90 },
+        { name: "REST API Design", level: 90 },
+        { name: "Concurrency & Multithreading", level: 80 },
         { name: "Design Patterns", level: 80 },
-        { name: "Data Structures", level: 80 },
-        { name: "Algorithms", level: 75 },
-        { name: "Multithreading", level: 75 },
+        { name: "System Design Basics", level: 75 },
       ],
     },
+
     frontend: {
       icon: <Layout className="h-6 w-6" />,
-      title: "Frontend Development",
-      description: "Modern web development technologies",
+      title: "Frontend Engineering",
+      description: "Modern, performance-focused user interfaces",
       skills: [
-        { name: "HTML/CSS", level: 80 },
-        { name: "Next.js", level: 75 },
-        { name: "React", level: 70 },
-        { name: "Tailwind CSS", level: 65 },
+        { name: "React (Hooks, State, Performance)", level: 85 },
+        { name: "Next.js (App Router, SSR)", level: 80 },
+        { name: "TypeScript", level: 75 },
+        { name: "Tailwind CSS", level: 80 },
+        { name: "API Integration", level: 85 },
       ],
     },
+
     backend: {
       icon: <Server className="h-6 w-6" />,
-      title: "Backend Development",
-      description: "Server-side frameworks and technologies",
+      title: "Backend Engineering",
+      description: "Scalable backend services and APIs",
       skills: [
-        { name: "Java (Spring Boot)", level: 85 },
-        { name: "Kotlin (Spring Boot)", level: 70 },
-        { name: "JavaScript (Node.js)", level: 65 },
-        { name: "TypeScript (Node.js)", level: 60 },
-      
+        { name: "Spring Boot", level: 90 },
+        { name: "Spring Security (JWT, OAuth2)", level: 85 },
+        { name: "Microservices Architecture", level: 80 },
+        { name: "Kafka (Event-Driven Systems)", level: 75 },
+        { name: "Redis (Caching & Sessions)", level: 75 },
       ],
     },
+
     database: {
       icon: <Database className="h-6 w-6" />,
-      title: "Database Systems",
-      description: "Database management and optimization",
+      title: "Databases & Persistence",
+      description: "Data storage and performance optimization",
       skills: [
+        { name: "PostgreSQL", level: 85 },
         { name: "MySQL", level: 80 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MongoDB", level: 55 },
+        { name: "MongoDB", level: 85 },
+        { name: "JPA / Hibernate", level: 85 },
+        { name: "Redis", level: 75 },
       ],
     },
-    tools: {
-      icon: <Wrench className="h-6 w-6" />,
-      title: "Development Tools",
-      description: "Tools and environments for development",
+
+    infrastructure: {
+      icon: <Cloud className="h-6 w-6" />,
+      title: "Infrastructure & Cloud",
+      description: "Deploying and running production systems",
       skills: [
-        { name: "Git", level: 90 },
-        { name: "Visual Studio", level: 90 },
-        { name: "JUnit 5", level: 80 },
-        { name: "Docker", level: 70 },
-        { name: "AWS", level: 75 },
+        { name: "Docker", level: 80 },
+        { name: "AWS (EC2, RDS, S3)", level: 75 },
+        { name: "CI/CD Pipelines", level: 70 },
+        { name: "Linux Basics", level: 75 },
+      ],
+    },
+
+    tooling: {
+      icon: <Wrench className="h-6 w-6" />,
+      title: "Development Tooling",
+      description: "Tools used for building and maintaining software",
+      skills: [
+        { name: "Git & GitHub", level: 90 },
+        { name: "JUnit & Integration Testing", level: 80 },
+        { name: "Postman", level: 85 },
+        { name: "IntelliJ IDEA", level: 90 },
+      ],
+    },
+
+    architecture: {
+      icon: <Layers className="h-6 w-6" />,
+      title: "System Architecture",
+      description: "Real-world backend architecture patterns",
+      skills: [
+        { name: "API Gateway Pattern", level: 80 },
+        { name: "Auth & Identity Services", level: 85 },
+        { name: "CORS & Security Hardening", level: 85 },
+        { name: "Service-to-Service Communication", level: 80 },
       ],
     },
   }
@@ -102,11 +141,13 @@ export default function TechStack() {
           variants={fadeIn}
           className="text-center mb-16"
         >
-          <Badge variant="outline" className="mb-4">
+          <Badge  variant="outline" className="mb-4">
             Skills
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical Expertise</h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Technical Expertise
+          </h2>
+          <div className="w-20 h-1 bg-primary mx-auto" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -116,21 +157,29 @@ export default function TechStack() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.4 }}
               variants={scaleUp}
             >
               <Card
-                className={`h-full cursor-pointer transition-all duration-300 hover:shadow-lg ${
+                className={`h-full cursor-pointer transition-all hover:shadow-lg ${
                   selectedCategory === key ? "ring-2 ring-primary" : ""
                 }`}
-                onClick={() => setSelectedCategory(selectedCategory === key ? null : key)}
+                onClick={() =>
+                  setSelectedCategory(selectedCategory === key ? null : key)
+                }
               >
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="bg-primary/10 p-3 rounded-full">{category.icon}</div>
+                    <div className="bg-primary/10 p-3 rounded-full">
+                      {category.icon}
+                    </div>
                     <div>
-                      <h3 className="text-lg font-semibold">{category.title}</h3>
-                      <p className="text-sm text-muted-foreground">{category.description}</p>
+                      <h3 className="text-lg font-semibold">
+                        {category.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {category.description}
+                      </p>
                     </div>
                   </div>
 
@@ -144,26 +193,22 @@ export default function TechStack() {
                         className="space-y-4"
                       >
                         {category.skills.map((skill, index) => (
-                          <motion.div
-                            key={index}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            className="space-y-2"
-                          >
+                          <div key={index} className="space-y-2">
                             <div className="flex justify-between text-sm">
                               <span className="font-medium">{skill.name}</span>
-                              <span className="text-muted-foreground">{skill.level}%</span>
+                              <span className="text-muted-foreground">
+                                {skill.level}%
+                              </span>
                             </div>
                             <div className="w-full bg-muted rounded-full h-1.5">
                               <motion.div
                                 initial={{ width: 0 }}
                                 animate={{ width: `${skill.level}%` }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                transition={{ duration: 0.5 }}
                                 className="bg-primary h-1.5 rounded-full"
                               />
                             </div>
-                          </motion.div>
+                          </div>
                         ))}
                       </motion.div>
                     )}
@@ -177,7 +222,9 @@ export default function TechStack() {
                         </Badge>
                       ))}
                       {category.skills.length > 3 && (
-                        <Badge variant="secondary">+{category.skills.length - 3} more</Badge>
+                        <Badge variant="secondary">
+                          +{category.skills.length - 3} more
+                        </Badge>
                       )}
                     </div>
                   )}
@@ -196,7 +243,10 @@ export default function TechStack() {
           className="mt-12 text-center text-muted-foreground"
         >
           <p className="max-w-2xl mx-auto">
-            With proficient experience in both low-level systems programming and modern web and mobile app development, I bring a comprehensive understanding of software engineering principles to every project.
+            I focus on building secure, scalable backend systems using Spring
+            Boot, supported by modern frontend technologies and production-grade
+            infrastructure. My experience emphasizes real-world engineering
+            tradeoffs, maintainability, and system reliability.
           </p>
         </motion.div>
       </div>
